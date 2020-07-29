@@ -35,11 +35,11 @@
   action: raw dpkg --purge zabbix-release && dpkg --purge zabbix-agent
   when: ipack.stdout != "1"
 
-- name: Baixando biblioteca Zabbix-Agent 4.0
-  action: raw wget https://repo.zabbix.com/zabbix/4.0/"{{ SO.stdout }}"/pool/main/z/zabbix-release_4.0.2%2B"{{ SOVERSION.stdout }}"_all.deb
+- name: Baixando biblioteca Zabbix-Agent 5.0
+  action: raw wget https://repo.zabbix.com/zabbix/5.0/"{{ SO.stdout }}"/pool/main/z/zabbix-release_5.0.2%2B"{{ SOVERSION.stdout }}"_all.deb
 
 - name: Executando novos repositorios .deb
-  action: raw dpkg -i zabbix-release_4.0-2+"{{ SOVERSION.stdout }}"_all.deb
+  action: raw dpkg -i zabbix-release_5.0-1+"{{ SOVERSION.stdout }}"_all.deb
 
 - name: Atualizando repositorios
   action: raw apt-get update
@@ -65,7 +65,7 @@
 
 - name: enviando arquivo zabbix pip
   copy:
-    src: files/zabbix-api-0.5.3.tar.gz
+    src: files/zabbix-api-1.1.7.tar.gz
     dest: /tmp/
 
 - name: instalando o zabbix-api
