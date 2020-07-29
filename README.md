@@ -35,8 +35,6 @@ $ ansible-playbook main.yml --extra-vars "hosts=grupodehosts"
 
 Após executar o seu playbook, basta ir no fontend do zabbix e conferir o host lá! ;)  
 
-## Quer fazer alguma melhoria?
-Mande um Pull Request :)  
 
 Link para o artigo: [Linux na Web](https://www.linuxnaweb.com/instalacao-automatizada-agente-zabbix-com-ansible/)  
 **Créditos:**
